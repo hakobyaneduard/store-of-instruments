@@ -1,2 +1,1 @@
-mexico bet 
-
+Task store of instruments
