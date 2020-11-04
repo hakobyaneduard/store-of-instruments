@@ -210,6 +210,10 @@
 
   font-size: 0.875rem;
   color: rgba(var(--store-black-2), 1);
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .header-product {
@@ -251,6 +255,10 @@
   .img-container {
     padding: 10px;
   }
+
+  &:hover {
+    border-color: rgba(var(--store-black), 1);
+  }
 }
 
 .header-product__item-img {
@@ -291,6 +299,10 @@
   font-size: 1.56rem;
 
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .contact-bottom {
@@ -388,6 +400,8 @@
   border-radius: 12px;
 
   display: flex;
+
+  box-shadow: 0 2px 2px 1px rgba(198, 198, 198, 0.5);
 }
 
 .search {
@@ -399,6 +413,11 @@
   border: none;
   padding: 0;
   background-color: rgba(var(--store-yellow), 1);
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 19px auto;
+  background-image: url("../../img/icons/search.png");
 
   border-top-left-radius: 9px;
   border-bottom-left-radius: 9px;
