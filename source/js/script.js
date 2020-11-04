@@ -1,25 +1,21 @@
-cssVars({
-  // Only styles from CodePen's CSS panel
-  include: 'style:not([data-ignore])',
-  // Treat all browsers as legacy
-  onlyLegacy: false,
+(function () {
+  const contactCountryChangeBtn = document.querySelector('.contact-country__change-current');
+  const contactCountryOtherBtn = document.querySelectorAll('.contact-country__change-btn');
 
-  // DEMO: Toggles to see results
-  // ----------------------------
-  // preserveStatic: false,
-  // preserveVars: true,
-  // updateURLs: false,
-  // variables: { '--color': 'purple' },
-  // ----------------------------
+  if (contactCountryChangeBtn && contactCountryOtherBtn) {
+    contactCountryChangeBtn.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      this.classList.toggle('active');
+    })
 
-  // Display transformed CSS
-  onComplete: function(cssText, styleNodes, cssVariables, benchmark) {
-    var codeElm = document.querySelector('code');
-
-    // Format CSS (external library)
-    cssText = css_beautify(cssText);
-
-    // Update <code> tag with CSS result
-    codeElm.textContent = cssText;
+    contactCountryOtherBtn.forEach(function (item) {
+      item.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        const currentCountry = contactCountryChangeBtn.textContent;
+        contactCountryChangeBtn.textContent = this.textContent
+        this.textContent = currentCountry;
+      })
+    });
   }
-});
+
+})();
